@@ -1,12 +1,12 @@
-# SpecFlow
+# 🚀 SpecFlow
 
-**SpecFlow** 是一套可自托管的 **LLM 推理编排与成本优化** 产品：OpenAI 兼容的 **`/v1/chat/completions`** 网关 + **Next.js 控制台**。内置 **Pilot 意图路由**、**语义缓存**、**上下文压缩**、**上游 Failover**、**API 级投机编排**（草稿试探 → 按任务决定是否调用目标模型），并把编排结果沉淀为 **可运营指标**（吞吐、命中率、节支估算等）。
+**SpecFlow** 是一套可自托管的 **LLM 推理编排与成本优化** 方案：包含 OpenAI 兼容的 **`/v1/chat/completions`** 网关 + **Next.js 控制台**。内置 **Pilot 意图路由**、**语义缓存**、**上下文压缩**、**上游 Failover**、**API 级投机编排**（草稿试探 → 按任务决定是否调用目标模型），并将编排结果沉淀为 **可运营指标**（吞吐、命中率、节支估算等）。
 
-> 硬件级投机解码需同卡 logits；当前为 **多模型 API 编排**，适合纯云端 API 与混合部署。
+> ⚠️ 硬件级投机解码需同卡 logits；当前为 **多模型 API 编排**，适合纯云端 API 与混合部署。
 
 ---
 
-## 产品能力清单（v0.3）
+## ✨ 产品能力清单（v0.3）
 
 | 模块 | 说明 |
 |------|------|
@@ -20,7 +20,7 @@
 
 ---
 
-## 仓库结构
+## 🧱 仓库结构
 
 ```
 spec-flow/
@@ -33,9 +33,9 @@ spec-flow/
 
 ---
 
-## 本地部署（推荐）
+## 🛠️ 本地部署（推荐）
 
-### 1. 网关
+### 1. 网关（API 网关）
 
 ```bash
 cd server
@@ -48,7 +48,7 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 健康检查：<http://127.0.0.1:8000/healthz>
 
-### 2. 控制台
+### 2. 控制台（管理界面）
 
 ```bash
 cd web
@@ -79,7 +79,7 @@ docker compose up --build
 
 ---
 
-## 网关 API 摘要
+## 🔌 网关 API 摘要
 
 | 端点 | 作用 |
 |------|------|
@@ -92,13 +92,13 @@ docker compose up --build
 
 ---
 
-## 环境变量（网关）
+## ⚙️ 环境变量（网关）
 
 见根目录 `.env.example`（`UPSTREAM_URLS`、`UPSTREAM_API_KEYS`、`DEFAULT_*_MODEL`、硅基流动示例等）。
 
 ---
 
-## 路线图
+## 🧭 路线图
 
 - [ ] `stream=true` 全链路流式
 - [ ] Pilot 外置 YAML / 多租户
@@ -107,6 +107,6 @@ docker compose up --build
 
 ---
 
-## License
+## 📄 License
 
 MIT
