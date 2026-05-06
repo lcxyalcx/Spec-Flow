@@ -1,0 +1,23 @@
+services:
+  specflow-api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+
+  specflow-web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      args:
+        SPECFLOW_API_INTERNAL: http://specflow-api:8000
+        NEXT_PUBLIC_SPECFLOW_WS_ORIGIN: ws://localhost:8000
+    ports:
+      - "3000:3000"
+    environment:
+      SPECFLOW_API_INTERNAL: http://specflow-api:8000
+    depends_on:
+      - specflow-api
